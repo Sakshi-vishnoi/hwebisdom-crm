@@ -1,0 +1,11 @@
+Options -Indexes
+<FilesMatch "^(\.env|README\.md|.*\.sql)$">
+    Require all denied
+</FilesMatch>
+
+# Never expose CLI/maintenance scripts directly.
+<IfModule mod_authz_core.c>
+  <FilesMatch "^sync_email\.php$">
+    Require all denied
+  </FilesMatch>
+</IfModule>

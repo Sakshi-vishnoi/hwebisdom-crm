@@ -1,0 +1,108 @@
+
+# ==========================================
+# ENVIRONMENT VARIABLES & SECRETS
+# ==========================================
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Configuration files containing credentials
+config.local.php
+env.local.php
+secrets.php
+credentials.json
+service-account*.json
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ==========================================
+# DEPENDENCIES
+# ==========================================
+/vendor/
+/node_modules/
+
+# ==========================================
+# LOGS & DEBUG FILES
+# ==========================================
+*.log
+/logs/
+/tmp/
+/temp/
+debug.log
+error_log
+npm-debug.log*
+yarn-debug.log*
+
+# ==========================================
+# DATABASE BACKUPS & DUMPS
+# ==========================================
+*.sql
+*.sql.gz
+*.dump
+*.sqlite
+*.sqlite3
+
+# Keep database schema or safe sample data if needed
+!/database/schema.sql
+!/database/sample-data.sql
+!/database/*.sql
+
+# ==========================================
+# USER UPLOADS & GENERATED FILES
+# ==========================================
+/uploads/*
+!/uploads/.gitkeep
+/storage/*
+!/storage/.gitkeep
+/cache/
+*.cache
+*.tmp
+*.temp
+
+# ==========================================
+# LOCAL DEVELOPMENT CONFIGURATION
+# ==========================================
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# PHP DEVELOPMENT TOOLS
+# ==========================================
+.phpunit.cache/
+/.php-cs-fixer.cache
+.phpactor.yml
+.phpstorm.meta.php
+.phpunit.result.cache
+
+# ==========================================
+# BUILD & COVERAGE OUTPUT
+# ==========================================
+/build/
+/dist/
+/coverage/
+
+# ==========================================
+# HOSTING & LOCAL ENVIRONMENT FILES
+# ==========================================
+/xampp/
+/.wamp/
+/.mamp/
+*.local
+
+# ==========================================
+# BACKUP FILES
+# ==========================================
+*.bak
+*.old
+*.orig
+*~
+*.swp
+*.swo

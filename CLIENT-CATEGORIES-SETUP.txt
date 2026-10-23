@@ -1,0 +1,24 @@
+CLIENT CATEGORY + LABEL FEATURE
+
+Client Category options:
+- Current Client
+- Old Client
+- Client Left
+- Prospect
+
+Client Label options (available for every category):
+- Hot
+- Cold
+- Dead
+
+Defaults for existing and newly imported leads: Prospect / Cold.
+New leads can choose these values in the Create Lead form. Existing leads can be updated from the Lead Information form. The All Leads page displays both fields and can filter by either value. CSV export includes the fields and respects the filters.
+
+INSTALL ON EXISTING XAMPP DATABASE
+1. Back up the project folder and database first.
+2. Copy the updated project files into C:\\xampp\\htdocs\\hwebisdom-crm (do not overwrite your local .env file).
+3. With Apache and MySQL running, open http://localhost/hwebisdom-crm/admin/migrate.php once while logged into the local environment. The migration is designed to add the two missing columns without deleting existing lead data.
+4. Confirm the setup page reports that the database structure is ready, then return to the CRM.
+5. After verifying the feature, remove or rename admin/migrate.php as the app's existing setup page recommends.
+
+Alternative SQL migration is provided at database/client_categories_migration.sql for a database where the columns have not already been added. Do not run that SQL if the columns already exist.
