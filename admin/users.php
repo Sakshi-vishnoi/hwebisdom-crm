@@ -50,7 +50,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 flash('success', 'User created successfully.');
                 redirect('users.php');
             } catch (PDOException $e) {
-                $error = 'Username already exists or could not be created.';
+                // Log the actual database error for debugging without exposing
+                // database details to the browser.
+                error_log('CRM user creation failed: ' . $e->getMessage());
+
+                // SQLSTATE 23000 commonly indicates a duplicate username/unique key.
+                if ($e->getCode() === '23000') {
+                    $error = 'That username may already exist. Please choose a different username.';
+                } else {
+                    $error = 'User could not be created. Please check the PHP error log and confirm that the users.role column supports the selected role (including b2b_manager).';
+                }
             }
         }
     }
